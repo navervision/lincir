@@ -14,6 +14,8 @@ Discover the magic of **LinCIR**, a ground-breaking approach to Composed Image R
 \* First two authors contributed equally.
 
 ## ⭐ Overview
+<img src=".github/figure_001.png" height="256">
+
 The Composed Image Retrieval (CIR) task, a fusion of image and text, has always been an intriguing challenge for AI researchers. Traditional CIR methods require expensive triplets of query image, query text, and target image for training, limiting scalability.
 
 Enter LinCIR, a revolutionary CIR framework that relies solely on language for training. Our innovative approach leverages self-supervision through self-masking projection (SMP), allowing LinCIR to be trained using text datasets alone.
@@ -21,7 +23,7 @@ Enter LinCIR, a revolutionary CIR framework that relies solely on language for t
 With LinCIR, we achieve astonishing efficiency and effectiveness. For instance, LinCIR with a CLIP ViT-G backbone is trained in just 48 minutes and outperforms existing methods in zero-shot composed image retrieval on four benchmark datasets: CIRCO, GeneCIS, FashionIQ, and CIRR. In fact, it even surpasses supervised methods on FashionIQ!
 
 ## 🚀 News
-- **00/00/0000** - LinCIR is officially released!
+- **December 5, 2023** - LinCIR is officially released!
 
 ## 🛠️ Installation
 Get started with LinCIR by installing the necessary dependencies:
