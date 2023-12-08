@@ -45,6 +45,7 @@ class Phi(nn.Module):
     """
     Textual Inversion Phi network.
     Takes as input the visual features of an image and outputs the pseudo-work embedding.
+    Copy-paste from https://github.com/miccunifi/SEARLE/blob/main/src/phi.py
     """
 
     def __init__(self, input_dim: int, hidden_dim: int, output_dim: int, dropout: int):

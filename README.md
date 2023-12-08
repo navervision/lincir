@@ -138,6 +138,9 @@ $ python evaluate.py \
 --combiner_pretrain_path /path/to/trained_your_phi_XXXXXXXXXX.pt
 ```
 
+## Acknowledgement
+We would like to express our special gratitude to the authors of [SEARLE](https//github.com/miccunifi/SEARLE) for their invaluable contributions, as our code draws significant inspiration from this open-source project.
+
 ## Citation
 ```
 @article{gu2023lincir,
