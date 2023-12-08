@@ -1,8 +1,3 @@
-'''
-LinCIR
-Copyright (c) 2023-present NAVER Corp.
-CC BY-NC-4.0 (https://creativecommons.org/licenses/by-nc/4.0/)
-'''
 import os
 import json
 import pickle

@@ -255,6 +255,7 @@ def build_loader(args, tokenizer, accelerator):
 
 class FashionIQDataset(Dataset):
     """
+    Copy-paste from https://github.com/miccunifi/SEARLE/blob/main/src/datasets.py
     FashionIQ dataset class for PyTorch.
     The dataset can be used in 'relative' or 'classic' mode:
         - In 'classic' mode the dataset yield :a dict with keys ['image', 'image_name']
@@ -378,6 +379,7 @@ class FashionIQDataset(Dataset):
 
 class CIRRDataset(Dataset):
     """
+   Copy-paste from https://github.com/miccunifi/SEARLE/blob/main/src/datasets.py
    CIRR dataset class for PyTorch dataloader.
    The dataset can be used in 'relative' or 'classic' mode:
         - In 'classic' mode the dataset yield a dict with keys ['image', 'image_name']
@@ -501,6 +503,7 @@ class CIRRDataset(Dataset):
 
 class CIRCODataset(Dataset):
     """
+    Copy-paste from https://github.com/miccunifi/SEARLE/blob/main/src/datasets.py
     CIRCO dataset class for PyTorch.
     The dataset can be used in 'relative' or 'classic' mode:
         - In 'classic' mode the dataset yield a dict with keys ['image', 'image_name']
