@@ -139,7 +139,7 @@ $ python evaluate.py \
 ```
 
 ## Acknowledgement
-We would like to express our special gratitude to the authors of [SEARLE](https//github.com/miccunifi/SEARLE) for their invaluable contributions, as our code draws significant inspiration from this open-source project.
+We would like to express our special gratitude to the authors of [SEARLE](https://github.com/miccunifi/SEARLE) for their invaluable contributions, as our code draws significant inspiration from this open-source project.
 
 ## Citation
 ```
