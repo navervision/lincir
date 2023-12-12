@@ -44,7 +44,6 @@ def parse_args():
     parser.add_argument("--logging_dir", default="logs", type=str, help="tensorboard logs will saved here")
     parser.add_argument("--cache_dir", default="./hf_models", type=str,
                         help="Path to model cache folder")
-    parser.add_argument("--hf_auth_token", required=True, type=str, help="token for HF authorization")
     parser.add_argument("--report_to", default="tensorboard", type=str, help="")
     parser.add_argument("--local_rank", type=int, default=-1, help="For distributed training: local_rank")
 
@@ -215,6 +214,7 @@ def train_phi(args):
 
     train_loss = 0.0
     global_step = 0
+    best_recall = -1
 
     progress_bar = tqdm(range(global_step, args.max_train_steps), disable=not accelerator.is_local_main_process)
     progress_bar.set_description("Steps")
@@ -297,6 +297,14 @@ def train_phi(args):
                         for check_key in check_list:
                             accelerator.log({f"validate/{check_key}": cirr_results_dict[check_key]}, step=global_step)
                         print(json.dumps(cirr_results_dict, indent=4))
+
+                        # Save the best model.
+                        if args.checkpointing_steps:
+                            if cirr_results_dict['cirr_recall_at1'] > best_recall:
+                                best_recall = cirr_results_dict['cirr_recall_at1']
+                                logger.info(f"best model saving... step: {global_step}")
+                                save_phi("phi_best", global_step, accelerator.unwrap_model(phi), args.output_dir)
+
                         phi.train()
 
             if global_step >= args.max_train_steps:
