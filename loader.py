@@ -216,36 +216,19 @@ class CaptionDataset(Dataset):
 def build_loader(args, tokenizer, accelerator):
     data_names = {'dataset1': 'dangne/gcc_caption_only',
                   'dataset2': 'FredZhang7/stable-diffusion-prompts-2.47M',
-                  #'dataset3': 'laion/laion-art',
-                  #'dataset4': 'yxchng/cc15m_yfcc15m',
-                  #'dataset5': 'Geonmo/gcc12m_caption_only',
-                  'dataset6': 'Geonmo/midjourney-prompts-only',
-                  #'dataset7': 'Skylion007/openwebtext',
-                  #'dataset-fashion': 'Geonmo/deepfashion-multimodal-descriptions',
-                  #'dataset-fashion-split': 'Geonmo/deepfashion-multimodal-descriptions-split',
-                  #'dataset-fashiongen-llama': 'yestaehyung/llama_fashiongen',
-                  #'dataset-fashiongen-captions': 'duyngtr16061999/fashion_text_to_image',
-                  #'dataset-laion-rvs-fashion': 'Geonmo/laion-rvs-fashion-caption-only',
-                  #'dataset-coyo700m': 'Geonmo/coyo700m-text-only',
+                  'dataset3': 'Geonmo/midjourney-prompts-only',
                   }
 
     for k, v in data_names.items():
         if not os.path.exists(os.path.join('./datasets', k)):
             if accelerator.is_main_process:
-                print('\tDownloading captions is required')
+                print('Downloading captions is required')
                 db = datasets.load_dataset(v, cache_dir=os.path.join('./datasets', k))
 
     captions = []
     for k, v in data_names.items():
         db = datasets.load_dataset(v, cache_dir=os.path.join('./datasets', k))
-        if k == 'dataset3':
-            captions += db['train']['TEXT']
-        elif k == 'dataset4':
-            captions += db['train']['caption']
-        elif k == 'dataset-coyo700m':
-            captions += random.sample(db['train']['text'], k=len(captions)//2)
-        else:
-            captions += db['train']['text']
+        captions += db['train']['text']
 
     dataset = CaptionDataset(captions, tokenizer, spacy.load('en_core_web_sm'))
     data_loader = torch.utils.data.DataLoader(dataset, batch_size=args.batch_size, num_workers=args.num_workers, drop_last=True, shuffle=True)

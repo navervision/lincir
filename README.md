@@ -3,7 +3,7 @@ Welcome to the official Pytorch implementation of LinCIR!
 
 Discover the magic of **LinCIR**, a ground-breaking approach to Composed Image Retrieval (CIR) that challenges convention and ushers in a new era of AI research. Dive into the limitless possibilities of zero-shot composed image retrieval with us!
 
-**[Read the Paper 📜](https://arxiv.org/abs/2312.01998)** | [Try the Demo 🤗]
+**[Read the Paper 📜](https://arxiv.org/abs/2312.01998)** | **[Try the Demo 🤗](https://huggingface.co/spaces/navervision/LinCIR)**
 
 **Authors**: 
 
@@ -33,6 +33,19 @@ $ pip install torch transformers diffusers accelerate datasets spacy
 $ python -m spacy download en_core_web_sm
 ```
 
+## 🤗 Demo
+If you want to run and execute the demo directly, you can do so by running the script below.
+
+Of course, you can also experience the demo directly on the [Huggingface Space](https://huggingface.co/spaces/navervision/LinCIR).
+
+```bash
+$ pip intall clip-retrieval
+
+$ python demo.py
+```
+
+Demo will be hosted at https://0.0.0.0:8000
+
 ## 📂 Dataset Preparation
 No need to worry about downloading training datasets manually. All training datasets are automatically fetched using the Hugging Face datasets library.
 
@@ -51,11 +64,11 @@ $ python -m torch.distributed.run --nproc_per_node 8 --nnodes 1 --node_rank 0 \
 --cirr_dataset_path /path/to/cir_datasets/CIRR \
 --mixed_precision fp16 \
 --clip_model_name large \
---validation_steps 500 \
---checkpointing_steps 500 \
+--validation_steps 1000 \
+--checkpointing_steps 1000 \
 --seed 12345 \
 --lr_scheduler constant_with_warmup --lr_warmup_steps 0 \
---max_train_steps 30000
+--max_train_steps 20000
 ```
 
 If you have a powerful GPU machine with 8 GPUs, simply run the above script. For less powerful GPU machine with single GPU, set `--nuproc_per_node` to 1 and adjust `--batch_size` to 256 or 512. Rest assured, the results will be consistent.
@@ -72,7 +85,7 @@ $ python generate_test_submission.py \
 --eval-type phi \
 --dataset cirr \
 --dataset-path /path/to/CIRR \
---phi-checkpoint-name /path/to/trained_your_phi_XXXXXXXXXX.pt \
+--phi-checkpoint-name /path/to/trained_your/phi_best.pt \
 --clip_model_name large \
 --submission-name cirlo_results
 ```
@@ -91,7 +104,7 @@ $ python validate.py \
 --eval-type phi \
 --dataset cirr \
 --dataset-path /path/to/CIRR \
---phi-checkpoint-name /path/to/trained_your_phi_XXXXXXXXXX.pt \
+--phi-checkpoint-name /path/to/trained_your/phi_best.pt \
 --clip_model_name large
 ```
 
@@ -103,7 +116,7 @@ $ python validate.py \
 --eval-type phi \
 --dataset fashioniq \
 --dataset-path /path/to/fashioniq \
---phi-checkpoint-name /path/to/trained_your_phi_XXXXXXXXXX.pt \
+--phi-checkpoint-name /path/to/trained_your/phi_best.pt \
 --clip_model_name large
 ```
 
@@ -115,7 +128,7 @@ $ python generate_test_submission.py \
 --eval-type phi \
 --dataset circo \
 --dataset-path /path/to/cir_datasets/CIRCO \
---phi-checkpoint-name /path/to/trained_your_phi_XXXXXXXXXX.pt \
+--phi-checkpoint-name /path/to/trained_your/phi_best.pt \
 --clip_model_name large \
 --submission-name cirlo_results
 ```
@@ -135,7 +148,7 @@ $ cd eval_genecis
 $ python evaluate.py \
 --combiner_mode phi \
 --model large \
---combiner_pretrain_path /path/to/trained_your_phi_XXXXXXXXXX.pt
+--combiner_pretrain_path /path/to/trained_your/phi_best.pt
 ```
 
 ## Acknowledgement
