@@ -68,7 +68,7 @@ def parse_args():
     parser.add_argument("--gradient_accumulation_steps", default=1, type=int, help="Number of updates steps to accumulate before performing a backward/update pass")
     parser.add_argument("--max_grad_norm", default=None, type=float, help="Max gradient norm.")
     parser.add_argument("--mixed_precision", default=None, type=str, choices=["no", "fp16", "bf16"], help="mixed precision")
-    parser.add_argument("--validation_steps", default=1, type=int, help="Validation frequency expressed in epochs")
+    parser.add_argument("--validation_steps", default=None, type=int, help="Validation frequency expressed in epochs")
     parser.add_argument("--checkpointing_steps", default=None, type=int, help="Save a checkpoint of the training state every X updates")
     parser.add_argument("--use_ema", action="store_true", help="Whether to use EMA model.")
 
@@ -272,7 +272,7 @@ def train_phi(args):
                         save_phi(f"ema_phi_{global_step:09}", global_step, phi_for_saving, args.output_dir)
                         save_phi(f"ema_phi_latest", global_step, phi_for_saving, args.output_dir)
 
-                if global_step % args.validation_steps == 0 or global_step == 50:
+                if args.validation_steps and (global_step % args.validation_steps == 0 or global_step == 50):
                     if accelerator.is_main_process:
                         logger.info(f"evaluate model... step: {global_step}")
 
@@ -308,7 +308,7 @@ def train_phi(args):
                         phi.train()
 
             if global_step >= args.max_train_steps:
-                break
+                exit()
 
 
 if __name__ == '__main__':
