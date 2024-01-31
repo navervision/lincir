@@ -73,7 +73,7 @@ $ python -m torch.distributed.run --nproc_per_node 8 --nnodes 1 --node_rank 0 \
 
 If you have a powerful GPU machine with 8 GPUs, simply run the above script. For less powerful GPU machine with single GPU, set `--nuproc_per_node` to 1 and adjust `--batch_size` to 256 or 512. Rest assured, the results will be consistent.
 
-If you'd like to use ViT-Base, Large, Huge or Giga as CLIP backbone, change `--clip_model_name` to base, large, huge, or giga each.
+If you'd like to use ViT-Large, Huge or Giga as CLIP backbone, change `--clip_model_name` to large, huge, or giga each.
 
 ## 💯 How to Evaluate LinCIR
 
