@@ -10,13 +10,9 @@ from transformers import CLIPTextModelWithProjection, CLIPVisionModelWithProject
 
 
 def build_text_encoder(args):
-    clip_model_dict = {'base32': 'openai/clip-vit-base-patch32',
-                       'base': 'openai/clip-vit-base-patch16',
-                       'large': 'openai/clip-vit-large-patch14',
+    clip_model_dict = {'large': 'openai/clip-vit-large-patch14',
                        'huge': 'laion/CLIP-ViT-H-14-laion2B-s32B-b79K',
                        'giga': 'Geonmo/CLIP-Giga-config-fixed',
-                       'meta-large': 'facebook/metaclip-l14-fullcc2.5b',
-                       'meta-huge': 'facebook/metaclip-h14-fullcc2.5b',
                        }
 
     clip_preprocess = CLIPImageProcessor(crop_size={'height': 224, 'width': 224},
