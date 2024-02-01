@@ -87,7 +87,7 @@ $ python generate_test_submission.py \
 --dataset-path /path/to/CIRR \
 --phi-checkpoint-name /path/to/trained_your/phi_best.pt \
 --clip_model_name large \
---submission-name cirlo_results
+--submission-name lincir_results
 ```
 
 Retrieved results will be saved as:
@@ -130,7 +130,7 @@ $ python generate_test_submission.py \
 --dataset-path /path/to/cir_datasets/CIRCO \
 --phi-checkpoint-name /path/to/trained_your/phi_best.pt \
 --clip_model_name large \
---submission-name cirlo_results
+--submission-name lincir_results
 ```
 
 Retrieved results will be saved as:
