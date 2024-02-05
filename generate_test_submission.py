@@ -14,7 +14,7 @@ from tqdm import tqdm
 
 from data_utils import PROJECT_ROOT, targetpad_transform
 from loader import CIRRDataset, CIRCODataset
-from encode_with_pseudo_tokens import encode_with_pseudo_tokens, encode_with_pseudo_tokens_HF
+from encode_with_pseudo_tokens import encode_with_pseudo_tokens_HF
 from models import build_text_encoder, Phi, PIC2WORD
 from utils import extract_image_features, device, collate_fn, extract_pseudo_tokens_with_phi
 
