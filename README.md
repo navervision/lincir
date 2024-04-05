@@ -1,7 +1,7 @@
 ## LinCIR: Language-only Training of Zero-shot Composed Image Retrieval (CVPR 2024)
 
 [![arXiv](https://img.shields.io/badge/arXiv%20papr-2312.01998-b31b1b.svg)](https://arxiv.org/abs/2312.01998)
-[![demo](https://img.shields.io/badge/Demo-Link-blue.svg)]([https://circo.micc.unifi.it/demo](https://huggingface.co/spaces/navervision/LinCIR))
+[![demo](https://img.shields.io/badge/Demo-Link-blue.svg)](https://huggingface.co/spaces/navervision/LinCIR)
 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/language-only-efficient-training-of-zero-shot/zero-shot-composed-image-retrieval-zs-cir-on-2)](https://paperswithcode.com/sota/zero-shot-composed-image-retrieval-zs-cir-on-2?p=language-only-efficient-training-of-zero-shot) \
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/language-only-efficient-training-of-zero-shot/zero-shot-composed-image-retrieval-zs-cir-on)](https://paperswithcode.com/sota/zero-shot-composed-image-retrieval-zs-cir-on?p=language-only-efficient-training-of-zero-shot) \
@@ -10,8 +10,6 @@
 Welcome to the official Pytorch implementation of LinCIR!
 
 Discover the magic of **LinCIR**, a ground-breaking approach to Composed Image Retrieval (CIR) that challenges convention and ushers in a new era of AI research. Dive into the limitless possibilities of zero-shot composed image retrieval with us!
-
-**[Read the Paper 📜](https://arxiv.org/abs/2312.01998)** | **[Try the Demo 🤗](https://huggingface.co/spaces/navervision/LinCIR)**
 
 **Authors**: 
 
@@ -31,6 +29,7 @@ Enter LinCIR, a revolutionary CIR framework that relies solely on language for t
 With LinCIR, we achieve astonishing efficiency and effectiveness. For instance, LinCIR with a CLIP ViT-G backbone is trained in just 48 minutes and outperforms existing methods in zero-shot composed image retrieval on four benchmark datasets: CIRCO, GeneCIS, FashionIQ, and CIRR. In fact, it even surpasses supervised methods on FashionIQ!
 
 ## 🚀 News
+- **February 27, 2024** - LinCIR is accepted at CVPR 2024!
 - **December 5, 2023** - LinCIR is officially released!
 
 ## 🛠️ Installation
@@ -148,15 +147,21 @@ Retrieved results will be saved as:
 Upload these files [here](https://circo.micc.unifi.it/evaluation) to view the results.
 
 ### GeneCIS
-Evaluating GeneCIS requires a few additional steps. Check out the `eval_genecis` branch and make the necessary adjustments to the configuration in `./eval_genecis/config.py`. Then, run the following script:
+Evaluating GeneCIS requires a few additional steps. Run the following script:
+
+You can get `VG_100K_all` and `COCO_val2017` at [GeneCIS](https://github.com/facebookresearch/genecis?tab=readme-ov-file#-arrow_down-downloads).
 
 ```bash
-$ cd eval_genecis
-
+# Assuming you're in the lincir folder.
+$ git fetch --all
+$ git checkout eval_genecis
+$ cd genecis
 $ python evaluate.py \
 --combiner_mode phi \
 --model large \
---combiner_pretrain_path /path/to/trained_your/phi_best.pt
+--combiner_pretrain_path /path/to/lincir_best.pt \
+--vg_100k_all_path /path/to/VG_100K_all \
+--coco_val2017_path /path/to/val2017
 ```
 
 ## Acknowledgement
@@ -164,11 +169,11 @@ We would like to express our special gratitude to the authors of [SEARLE](https:
 
 ## Citation
 ```
-@article{gu2023lincir,
-  title={Language-only Efficient Training of Zero-shot Composed Image Retrieval},
-  author={Gu, Geonmo and Chun, Sanghyuk and Kim, Wonjae and and Kang, Yoohoon and Yun, Sangdoo},
-  journal={arXiv preprint arXiv:2312.01998},
-  year={2023}
+@inproceedings{gu2024lincir,
+    title={Language-only Efficient Training of Zero-shot Composed Image Retrieval},
+    author={Gu, Geonmo and Chun, Sanghyuk and Kim, Wonjae and and Kang, Yoohoon and Yun, Sangdoo},
+    year={2024},
+    booktitle={Conference on Computer Vision and Pattern Recognition (CVPR)},
 }
 ```
 
