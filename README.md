@@ -170,7 +170,7 @@ We would like to express our special gratitude to the authors of [SEARLE](https:
 ## Citation
 ```
 @inproceedings{gu2024lincir,
-    title={Language-only Training of Zero-shot Composed Image Retrieval},
+    title={Language-only Efficient Training of Zero-shot Composed Image Retrieval},
     author={Gu, Geonmo and Chun, Sanghyuk and Kim, Wonjae and and Kang, Yoohoon and Yun, Sangdoo},
     year={2024},
     booktitle={Conference on Computer Vision and Pattern Recognition (CVPR)},
