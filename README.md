@@ -7,6 +7,12 @@
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/language-only-efficient-training-of-zero-shot/zero-shot-composed-image-retrieval-zs-cir-on)](https://paperswithcode.com/sota/zero-shot-composed-image-retrieval-zs-cir-on?p=language-only-efficient-training-of-zero-shot) \
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/language-only-efficient-training-of-zero-shot/zero-shot-composed-image-retrieval-zs-cir-on-1)](https://paperswithcode.com/sota/zero-shot-composed-image-retrieval-zs-cir-on-1?p=language-only-efficient-training-of-zero-shot)
 
+By combining LinCIR with [RTD](https://arxiv.org/abs/2406.09188), it achieves,
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/reducing-task-discrepancy-of-text-encoders/zero-shot-composed-image-retrieval-zs-cir-on-2)](https://paperswithcode.com/sota/zero-shot-composed-image-retrieval-zs-cir-on-2?p=reducing-task-discrepancy-of-text-encoders)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/reducing-task-discrepancy-of-text-encoders/zero-shot-composed-image-retrieval-zs-cir-on)](https://paperswithcode.com/sota/zero-shot-composed-image-retrieval-zs-cir-on?p=reducing-task-discrepancy-of-text-encoders)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/reducing-task-discrepancy-of-text-encoders/zero-shot-composed-image-retrieval-zs-cir-on-1)](https://paperswithcode.com/sota/zero-shot-composed-image-retrieval-zs-cir-on-1?p=reducing-task-discrepancy-of-text-encoders)
+
+
 Welcome to the official Pytorch implementation of LinCIR!
 
 Discover the magic of **LinCIR**, a ground-breaking approach to Composed Image Retrieval (CIR) that challenges convention and ushers in a new era of AI research. Dive into the limitless possibilities of zero-shot composed image retrieval with us!
