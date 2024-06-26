@@ -7,9 +7,10 @@
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/language-only-efficient-training-of-zero-shot/zero-shot-composed-image-retrieval-zs-cir-on)](https://paperswithcode.com/sota/zero-shot-composed-image-retrieval-zs-cir-on?p=language-only-efficient-training-of-zero-shot) \
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/language-only-efficient-training-of-zero-shot/zero-shot-composed-image-retrieval-zs-cir-on-1)](https://paperswithcode.com/sota/zero-shot-composed-image-retrieval-zs-cir-on-1?p=language-only-efficient-training-of-zero-shot)
 
-By combining LinCIR with [RTD](https://arxiv.org/abs/2406.09188), it achieves,
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/reducing-task-discrepancy-of-text-encoders/zero-shot-composed-image-retrieval-zs-cir-on-2)](https://paperswithcode.com/sota/zero-shot-composed-image-retrieval-zs-cir-on-2?p=reducing-task-discrepancy-of-text-encoders)
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/reducing-task-discrepancy-of-text-encoders/zero-shot-composed-image-retrieval-zs-cir-on)](https://paperswithcode.com/sota/zero-shot-composed-image-retrieval-zs-cir-on?p=reducing-task-discrepancy-of-text-encoders)
+By combining LinCIR with [RTD](https://arxiv.org/abs/2406.09188), we can achieve:
+
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/reducing-task-discrepancy-of-text-encoders/zero-shot-composed-image-retrieval-zs-cir-on-2)](https://paperswithcode.com/sota/zero-shot-composed-image-retrieval-zs-cir-on-2?p=reducing-task-discrepancy-of-text-encoders) \
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/reducing-task-discrepancy-of-text-encoders/zero-shot-composed-image-retrieval-zs-cir-on)](https://paperswithcode.com/sota/zero-shot-composed-image-retrieval-zs-cir-on?p=reducing-task-discrepancy-of-text-encoders) \
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/reducing-task-discrepancy-of-text-encoders/zero-shot-composed-image-retrieval-zs-cir-on-1)](https://paperswithcode.com/sota/zero-shot-composed-image-retrieval-zs-cir-on-1?p=reducing-task-discrepancy-of-text-encoders)
 
 
