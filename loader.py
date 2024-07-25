@@ -17,7 +17,6 @@ from torch.utils.data import Dataset
 import webdataset as wds
 import spacy
 import numpy as np
-import sng_parser
 import datasets
 
 
@@ -70,13 +69,6 @@ def extract_keywords_spacy(spacy_nlp, caption):
         sequences.append(" ".join(current_sequence))
 
     return sequences
-
-
-def extract_sng(caption):
-    graph = sng_parser.parse(caption)
-    entities = [x['head'] for i, x in enumerate(graph['entities'])]
-    relations = [{'subject': entities[x['subject']], 'object': entities[x['object']], 'relation': x['relation']} for x in graph['relations']]
-    return entities, relations
 
 
 def clean_caption(caption, tokenizer):
