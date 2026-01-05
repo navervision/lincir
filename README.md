@@ -48,6 +48,8 @@ $ python -m spacy download en_core_web_sm
 ```
 
 ## 🤗 Demo based on LinCIR (VIT-L)
+Model file is here [LinCIR (VIT-L)](https://huggingface.co/navervision/zeroshot-cir-models/blob/main/lincir_large.pt).
+
 If you want to run and execute the demo directly, you can do so by running the script below.
 
 Of course, you can also experience the demo directly on the [Huggingface Space](https://huggingface.co/spaces/navervision/LinCIR).
