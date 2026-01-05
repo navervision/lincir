@@ -47,7 +47,7 @@ $ pip install torch transformers diffusers accelerate datasets spacy
 $ python -m spacy download en_core_web_sm
 ```
 
-## 🤗 Demo
+## 🤗 Demo based on LinCIR (VIT-L)
 If you want to run and execute the demo directly, you can do so by running the script below.
 
 Of course, you can also experience the demo directly on the [Huggingface Space](https://huggingface.co/spaces/navervision/LinCIR).
